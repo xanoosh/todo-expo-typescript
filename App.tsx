@@ -9,15 +9,20 @@ export default function App() {
     text: string;
     isDone: boolean;
   }
-  const [toDo, setToDo] = useState<arrElement[] | null>(null);
+  const [toDo, setToDo] = useState<arrElement[]>([]);
 
   const someArray = [
     { title: 'task1', text: 'task1 text', isDone: true },
     { title: 'task2', text: 'task2 text', isDone: false },
     { title: 'task3', text: 'task3 text', isDone: true },
   ];
-
-  useEffect(() => setToDo(someArray), []);
+  useEffect(() => {
+    setToDo(someArray);
+    //load data from asyncstorage
+  }, []);
+  useEffect(() => {
+    //save data to asyncstorage
+  }, [toDo]);
 
   return (
     <View style={styles.container}>

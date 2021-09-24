@@ -12,6 +12,7 @@ const ListElement = ({ title, text, isDone, id }: ListElementProps) => {
   return (
     <View>
       <Text>{title}</Text>
+      <Text>{id}</Text>
       <Text>{isDone ? 'Done' : 'ToDo'}</Text>
       <Text>{text}</Text>
     </View>
