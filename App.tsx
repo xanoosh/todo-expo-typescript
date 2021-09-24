@@ -1,9 +1,11 @@
 import React from 'react';
-import { Pressable, Text, StyleSheet, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import { useState, useEffect } from 'react';
 import List from './components/List';
 import { getStorageData, updateStorageData } from './functions/MainFunctions';
 import { addTask, removeTask } from './functions/TaskFunctions';
+
+import { mainStyles } from './style/Style';
 
 export default function App() {
   interface arrElement {
@@ -25,7 +27,7 @@ export default function App() {
   }, [toDo]);
 
   return (
-    <View style={styles.container}>
+    <View style={mainStyles.container}>
       <List array={toDo} handleRemoveTask={removeTask} setter={setToDo} />
       <Pressable
         onPress={() =>
@@ -43,12 +45,3 @@ export default function App() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
