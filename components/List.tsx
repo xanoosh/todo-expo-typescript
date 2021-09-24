@@ -8,23 +8,27 @@ interface arrayElement {
   isDone: boolean;
 }
 type ListProps = {
-  array: arrayElement[];
+  array: arrayElement[] | null;
 };
 
 const List = ({ array }: ListProps) => {
-  const elements = array.map((el, i) => {
-    <ListElement
-      key={i}
-      id={i}
-      title={el.title}
-      text={el.text}
-      isDone={el.isDone}
-    />;
-  });
+  const content = array ? (
+    array.map((el, i) => {
+      <ListElement
+        key={i}
+        id={i}
+        title={el.title}
+        text={el.text}
+        isDone={el.isDone}
+      />;
+    })
+  ) : (
+    <Text>No tasks</Text>
+  );
   return (
     <View>
       <Text>List:</Text>
-      {elements}
+      {content}
     </View>
   );
 };

@@ -4,15 +4,20 @@ import { useState, useEffect } from 'react';
 import List from './components/List';
 
 export default function App() {
-  // const [toDo, setToDo] = useState([]);
+  interface arrElement {
+    title: string;
+    text: string;
+    isDone: boolean;
+  }
+  const [toDo, setToDo] = useState<arrElement[] | null>(null);
 
-  // const array = [{ title: 'task1', text: 'task1 text', isDone: true }];
-  // useEffect(() => setToDo(array), []);
-  const toDo = [
+  const someArray = [
     { title: 'task1', text: 'task1 text', isDone: true },
     { title: 'task2', text: 'task2 text', isDone: false },
     { title: 'task3', text: 'task3 text', isDone: true },
   ];
+
+  useEffect(() => setToDo(someArray), []);
 
   return (
     <View style={styles.container}>
