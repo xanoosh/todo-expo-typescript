@@ -10,16 +10,11 @@ interface arrElement {
 }
 
 type ModalProps = {
-  array: arrElement[];
-  handleRemoveTask: (
-    taskId: number,
-    fullArr: arrElement[],
-    setter: (arr: arrElement[]) => void
-  ) => void;
+  handleAddTask: (task: arrElement, setter: (prev: any) => void) => void;
   setter: (value: any) => void;
 };
 
-const AddElementModal = ({ array, handleRemoveTask, setter }: ModalProps) => {
+const AddElementModal = ({ handleAddTask, setter }: ModalProps) => {
   const [modalOpened, setModalOpened] = useState(false);
   return (
     <View>
