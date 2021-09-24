@@ -3,6 +3,7 @@ import { Pressable, Text, StyleSheet, View } from 'react-native';
 import { useState, useEffect } from 'react';
 import List from './components/List';
 import { getStorageData, updateStorageData } from './functions/MainFunctions';
+import { addTask, removeTask } from './functions/TaskFunctions';
 
 export default function App() {
   interface arrElement {
@@ -25,7 +26,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <List array={toDo} />
+      <List array={toDo} handleRemoveTask={removeTask} setter={setToDo} />
       <Pressable
         onPress={() =>
           setToDo((prev) => [
@@ -35,6 +36,9 @@ export default function App() {
         }
       >
         <Text>Add task</Text>
+      </Pressable>
+      <Pressable onPress={() => setToDo([])}>
+        <Text>Reset</Text>
       </Pressable>
     </View>
   );

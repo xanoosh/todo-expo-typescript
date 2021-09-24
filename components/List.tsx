@@ -2,16 +2,23 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import ListElement from './ListElement';
 
-interface arrayElement {
+interface arrElement {
   title: string;
   text: string;
   isDone: boolean;
 }
+
 type ListProps = {
-  array: arrayElement[];
+  array: arrElement[];
+  handleRemoveTask: (
+    taskId: number,
+    fullArr: arrElement[],
+    setter: (arr: arrElement[]) => void
+  ) => void;
+  setter: (value: any) => void;
 };
 
-const List = ({ array }: ListProps) => {
+const List = ({ array, handleRemoveTask, setter }: ListProps) => {
   const content =
     array.length > 0 ? (
       array.map((el, i) => (
@@ -21,6 +28,9 @@ const List = ({ array }: ListProps) => {
           title={el.title}
           text={el.text}
           isDone={el.isDone}
+          setter={setter}
+          handleRemoveTask={handleRemoveTask}
+          array={array}
         />
       ))
     ) : (
