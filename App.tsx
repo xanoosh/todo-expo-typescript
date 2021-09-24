@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, Text, StyleSheet, View } from 'react-native';
 import { useState, useEffect } from 'react';
 import List from './components/List';
+import { getStorageData, updateStorageData } from './functions/MainFunctions';
 
 export default function App() {
   interface arrElement {
@@ -11,22 +12,30 @@ export default function App() {
   }
   const [toDo, setToDo] = useState<arrElement[]>([]);
 
-  const someArray = [
-    { title: 'task1', text: 'task1 text', isDone: true },
-    { title: 'task2', text: 'task2 text', isDone: false },
-    { title: 'task3', text: 'task3 text', isDone: true },
-  ];
   useEffect(() => {
-    setToDo(someArray);
-    //load data from asyncstorage
+    (async () => {
+      const storedData = await getStorageData();
+      if (!storedData) setToDo([]);
+      if (storedData) setToDo(storedData);
+    })();
   }, []);
   useEffect(() => {
-    //save data to asyncstorage
+    updateStorageData(toDo);
   }, [toDo]);
 
   return (
     <View style={styles.container}>
       <List array={toDo} />
+      <Pressable
+        onPress={() =>
+          setToDo((prev) => [
+            ...prev,
+            { title: 'title', text: 'text', isDone: false },
+          ])
+        }
+      >
+        <Text>Add task</Text>
+      </Pressable>
     </View>
   );
 }

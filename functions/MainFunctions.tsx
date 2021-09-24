@@ -10,7 +10,13 @@ const getStorageData = async () => {
   }
 };
 
-const updateStorageData = async (array: []) => {
+interface arrElement {
+  title: string;
+  text: string;
+  isDone: boolean;
+}
+
+const updateStorageData = async (array: arrElement[]) => {
   try {
     AsyncStorage.setItem('historyArray', JSON.stringify(array));
   } catch (e) {
