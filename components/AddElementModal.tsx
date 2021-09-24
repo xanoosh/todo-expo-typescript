@@ -31,7 +31,12 @@ const AddElementModal = ({ handleAddTask, setter }: ModalProps) => {
           setModalOpened(!modalOpened);
         }}
       >
-        <ModalContent setOpened={setModalOpened} opened={modalOpened} />
+        <ModalContent
+          setOpened={setModalOpened}
+          opened={modalOpened}
+          handleAddTask={handleAddTask}
+          setter={setter}
+        />
       </Modal>
     </View>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
-import { useState } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { useState, useEffect } from 'react';
+import { View, Text, Pressable, TextInput } from 'react-native';
 
 interface arrElement {
   title: string;
@@ -21,17 +21,31 @@ const ModalConent = ({
   handleAddTask,
   setter,
 }: ModalContentProps) => {
+  const [title, setTitle] = useState('');
+  const [text, setText] = useState('');
+  const [isDone, setIsDone] = useState(false);
   const [newTaskContent, setNewTaskContent] = useState<arrElement>({
-    title: '',
-    text: '',
-    isDone: false,
+    title: title,
+    text: text,
+    isDone: isDone,
   });
+
   return (
     <View>
       <Pressable onPress={() => setOpened(!opened)}>
         <Text>×</Text>
       </Pressable>
-      <Text>Some content</Text>
+      <View>
+        <TextInput
+          onChangeText={setTitle}
+          value={title}
+          placeholder="add title"
+        />
+        <TextInput onChangeText={setText} value={text} placeholder="add text" />
+        <Pressable onPress={() => setIsDone(!isDone)}>
+          <Text>{isDone ? 'yes' : 'no'}</Text>
+        </Pressable>
+      </View>
       <Pressable onPress={() => handleAddTask(newTaskContent, setter)}>
         <Text>Add</Text>
       </Pressable>
