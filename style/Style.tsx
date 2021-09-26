@@ -9,8 +9,19 @@ const mainStyles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
 const listStyles = StyleSheet.create({});
 
 const listElementStyles = StyleSheet.create({});
 
-export { mainStyles };
+const modalContainerStyles = StyleSheet.create({});
+
+const modalContentStyles = StyleSheet.create({});
+
+export {
+  mainStyles,
+  listStyles,
+  listElementStyles,
+  modalContainerStyles,
+  modalContentStyles,
+};
