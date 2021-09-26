@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { View, Text, Pressable, TextInput } from 'react-native';
-
+import { modalContentStyles } from '../style/Style';
 interface arrElement {
   title: string;
   text: string;

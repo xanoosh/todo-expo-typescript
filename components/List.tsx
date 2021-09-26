@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import ListElement from './ListElement';
+import { listStyles } from '../style/Style';
 
 interface arrElement {
   title: string;

@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { View, Text, Modal, Pressable } from 'react-native';
 import ModalContent from './ModalContent';
+import { modalContainerStyles } from '../style/Style';
 
 interface arrElement {
   title: string;
