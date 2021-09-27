@@ -45,12 +45,20 @@ const listElementStyles = StyleSheet.create({
     height: 50,
     padding: 10,
     overflow: 'hidden',
+    flexDirection: 'row',
+    // justifyContent: '',
   },
   title: {
     fontWeight: 'bold',
     fontSize: 17,
+    width: '50%',
+    justifyContent: 'center',
   },
-  text: {},
+  expandTextContainer: {
+    width: '25%',
+    alignItems: 'flex-end',
+    justifyContent: 'center',
+  },
   removeBtn: {
     position: 'absolute',
     top: 7.5,
@@ -92,6 +100,11 @@ const modalContentStyles = StyleSheet.create({
     borderBottomColor: '#000000',
     borderStyle: 'solid',
     textAlign: 'center',
+  },
+  text: {
+    textAlign: 'center',
+    lineHeight: 20,
+    fontSize: 18,
   },
   addBtn: {
     position: 'absolute',

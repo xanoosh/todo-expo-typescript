@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { View, Text, Modal, Pressable } from 'react-native';
+import { View, Text, Modal, Pressable, ScrollView } from 'react-native';
 import { modalContentStyles } from '../style/Style';
 
 type ModalProps = {
@@ -31,6 +31,7 @@ const ModalText = ({ text }: ModalProps) => {
           >
             <Text style={modalContentStyles.removeBtnText}>×</Text>
           </Pressable>
+          <Text style={modalContentStyles.text}>{text}</Text>
         </View>
       </Modal>
     </View>

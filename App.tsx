@@ -31,9 +31,9 @@ export default function App() {
 
   return (
     <View style={mainStyles.container}>
-      <Pressable style={mainStyles.resetBtn} onPress={() => setToDo([])}>
+      {/* <Pressable style={mainStyles.resetBtn} onPress={() => setToDo([])}>
         <Text>Reset</Text>
-      </Pressable>
+      </Pressable> */}
       <ModalContainer handleAddTask={addTask} setter={setToDo} />
       <List array={toDo} handleRemoveTask={removeTask} setter={setToDo} />
     </View>

@@ -37,11 +37,10 @@ const ListElement = ({
 }: ListElementProps) => {
   return (
     <View style={listElementStyles.container}>
-      {/* <Text>{id}</Text>
-      <Text>{isDone ? 'Done' : 'ToDo'}</Text> */}
       <Text style={listElementStyles.title}>{title}</Text>
-      <ModalText text={text} />
-      {/* <Text style={listElementStyles.text}>{text}</Text> */}
+      <View style={listElementStyles.expandTextContainer}>
+        <ModalText text={text} />
+      </View>
       <Pressable
         style={listElementStyles.removeBtn}
         onPress={() => {
