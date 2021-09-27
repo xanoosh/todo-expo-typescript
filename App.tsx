@@ -29,8 +29,11 @@ export default function App() {
 
   return (
     <View style={mainStyles.container}>
-      <List array={toDo} handleRemoveTask={removeTask} setter={setToDo} />
+      <Pressable style={mainStyles.resetBtn} onPress={() => setToDo([])}>
+        <Text>Reset</Text>
+      </Pressable>
       <Pressable
+        style={mainStyles.addBtn}
         onPress={() =>
           setToDo((prev) => [
             ...prev,
@@ -40,9 +43,8 @@ export default function App() {
       >
         <Text>Add task</Text>
       </Pressable>
-      <Pressable onPress={() => setToDo([])}>
-        <Text>Reset</Text>
-      </Pressable>
+
+      <List array={toDo} handleRemoveTask={removeTask} setter={setToDo} />
     </View>
   );
 }

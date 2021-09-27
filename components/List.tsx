@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import ListElement from './ListElement';
 import { listStyles } from '../style/Style';
 
@@ -37,13 +37,12 @@ const List = ({ array, handleRemoveTask, setter }: ListProps) => {
         />
       ))
     ) : (
-      <Text>No tasks</Text>
+      <Text style={listStyles.placeholderText}>No tasks</Text>
     );
-  return (
-    <View>
-      <Text>List:</Text>
-      <View>{content}</View>
-    </View>
+  return array.length > 0 ? (
+    <ScrollView style={listStyles.container}>{content}</ScrollView>
+  ) : (
+    <View style={listStyles.placeholder}>{content}</View>
   );
 };
 
