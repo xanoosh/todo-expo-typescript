@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Pressable } from 'react-native';
 import { listElementStyles } from '../style/Style';
+import ModalText from './ModalText';
 
 interface arrElement {
   title: string;
@@ -39,7 +40,8 @@ const ListElement = ({
       {/* <Text>{id}</Text>
       <Text>{isDone ? 'Done' : 'ToDo'}</Text> */}
       <Text style={listElementStyles.title}>{title}</Text>
-      <Text style={listElementStyles.text}>{text}</Text>
+      <ModalText text={text} />
+      {/* <Text style={listElementStyles.text}>{text}</Text> */}
       <Pressable
         style={listElementStyles.removeBtn}
         onPress={() => {
