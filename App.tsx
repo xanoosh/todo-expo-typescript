@@ -12,6 +12,7 @@ export default function App() {
     title: string;
     text: string;
     isDone: boolean;
+    textExpanded: boolean;
   }
   const [toDo, setToDo] = useState<arrElement[]>([]);
 
@@ -33,7 +34,7 @@ export default function App() {
         onPress={() =>
           setToDo((prev) => [
             ...prev,
-            { title: 'title', text: 'text', isDone: false },
+            { title: 'title', text: 'text', isDone: false, textExpanded: true },
           ])
         }
       >

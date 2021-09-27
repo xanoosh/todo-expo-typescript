@@ -7,6 +7,7 @@ interface arrElement {
   title: string;
   text: string;
   isDone: boolean;
+  textExpanded: boolean;
 }
 
 type ListProps = {
@@ -29,6 +30,7 @@ const List = ({ array, handleRemoveTask, setter }: ListProps) => {
           title={el.title}
           text={el.text}
           isDone={el.isDone}
+          textExpanded={el.textExpanded}
           setter={setter}
           handleRemoveTask={handleRemoveTask}
           array={array}

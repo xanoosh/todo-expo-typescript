@@ -6,12 +6,14 @@ interface arrElement {
   title: string;
   text: string;
   isDone: boolean;
+  textExpanded: boolean;
 }
 
 type ListElementProps = {
   title: string;
   text: string;
   isDone: boolean;
+  textExpanded: boolean;
   id: number;
   array: arrElement[];
   handleRemoveTask: (
@@ -26,6 +28,7 @@ const ListElement = ({
   title,
   text,
   isDone,
+  textExpanded,
   handleRemoveTask,
   id,
   array,

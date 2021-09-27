@@ -2,6 +2,7 @@ interface arrElement {
   title: string;
   text: string;
   isDone: boolean;
+  textExpanded: boolean;
 }
 
 const addTask = (task: arrElement, setter: (prev: any) => void) => {
