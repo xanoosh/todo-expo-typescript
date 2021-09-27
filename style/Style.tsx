@@ -15,12 +15,6 @@ const mainStyles = StyleSheet.create({
     top: '5%',
     left: '2%',
   },
-  addBtn: {
-    position: 'absolute',
-    zIndex: 1,
-    top: '5%',
-    right: '2%',
-  },
 });
 
 const listStyles = StyleSheet.create({
@@ -72,9 +66,41 @@ const listElementStyles = StyleSheet.create({
   },
 });
 
-const modalContainerStyles = StyleSheet.create({});
+const modalContainerStyles = StyleSheet.create({
+  addBtn: {
+    position: 'absolute',
+    zIndex: 1,
+    top: '5%',
+    right: '2%',
+  },
+});
 
-const modalContentStyles = StyleSheet.create({});
+const modalContentStyles = StyleSheet.create({
+  modalContainer: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    position: 'relative',
+  },
+  input: {
+    width: '100%',
+    padding: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: '#000000',
+    borderStyle: 'solid',
+  },
+  addBtn: {
+    position: 'absolute',
+    bottom: '10%',
+    width: '30%',
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: '#000000',
+    borderStyle: 'solid',
+  },
+});
 
 export {
   mainStyles,

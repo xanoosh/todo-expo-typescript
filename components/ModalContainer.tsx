@@ -8,6 +8,7 @@ interface arrElement {
   title: string;
   text: string;
   isDone: boolean;
+  textExpanded: boolean;
 }
 
 type ModalProps = {
@@ -18,7 +19,7 @@ type ModalProps = {
 const AddElementModal = ({ handleAddTask, setter }: ModalProps) => {
   const [modalOpened, setModalOpened] = useState(false);
   return (
-    <View>
+    <View style={modalContainerStyles.addBtn}>
       <Pressable onPress={() => setModalOpened(!modalOpened)}>
         <Text>Add note</Text>
       </Pressable>

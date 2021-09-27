@@ -6,6 +6,7 @@ interface arrElement {
   title: string;
   text: string;
   isDone: boolean;
+  textExpanded: boolean;
 }
 
 type ModalContentProps = {
@@ -24,30 +25,46 @@ const ModalConent = ({
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const [isDone, setIsDone] = useState(false);
-  const [newTaskContent, setNewTaskContent] = useState<arrElement>({
-    title: title,
-    text: text,
-    isDone: isDone,
-  });
+  const [textExpanded, setTextExpanded] = useState(false);
+
+  const getNewNote = () => {
+    return {
+      title,
+      text,
+      isDone,
+      textExpanded,
+    };
+  };
 
   return (
-    <View>
-      <Pressable onPress={() => setOpened(!opened)}>
-        <Text>×</Text>
-      </Pressable>
+    <View style={modalContentStyles.modalContainer}>
       <View>
         <TextInput
+          style={modalContentStyles.input}
           onChangeText={setTitle}
           value={title}
-          placeholder="add title"
+          placeholder="title"
         />
-        <TextInput onChangeText={setText} value={text} placeholder="add text" />
+        <TextInput
+          style={modalContentStyles.input}
+          onChangeText={setText}
+          value={text}
+          placeholder="text"
+        />
         <Pressable onPress={() => setIsDone(!isDone)}>
-          <Text>{isDone ? 'yes' : 'no'}</Text>
+          {/* <Text>{isDone ? 'yes' : 'no'}</Text> */}
         </Pressable>
       </View>
-      <Pressable onPress={() => handleAddTask(newTaskContent, setter)}>
+      <Pressable
+        onPress={() => {
+          handleAddTask(getNewNote(), setter);
+          setOpened(!opened);
+        }}
+      >
         <Text>Add</Text>
+      </Pressable>
+      <Pressable onPress={() => setOpened(!opened)}>
+        <Text>×</Text>
       </Pressable>
     </View>
   );
