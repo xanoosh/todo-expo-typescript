@@ -35,18 +35,19 @@ const ListElement = ({
   setter,
 }: ListElementProps) => {
   return (
-    <View>
+    <View style={listElementStyles.container}>
+      {/* <Text>{id}</Text>
+      <Text>{isDone ? 'Done' : 'ToDo'}</Text> */}
+      <Text style={listElementStyles.title}>{title}</Text>
+      <Text style={listElementStyles.text}>{text}</Text>
       <Pressable
+        style={listElementStyles.removeBtn}
         onPress={() => {
           handleRemoveTask(id, array, setter);
         }}
       >
-        <Text>Remove</Text>
+        <Text style={listElementStyles.removeBtnText}>×</Text>
       </Pressable>
-      <Text>{title}</Text>
-      <Text>{id}</Text>
-      <Text>{isDone ? 'Done' : 'ToDo'}</Text>
-      <Text>{text}</Text>
     </View>
   );
 };

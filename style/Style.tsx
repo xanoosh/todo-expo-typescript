@@ -38,10 +38,39 @@ const listStyles = StyleSheet.create({
     width: '100%',
     marginTop: '20%',
     backgroundColor: '#efefef',
+    padding: 5,
   },
 });
 
-const listElementStyles = StyleSheet.create({});
+const listElementStyles = StyleSheet.create({
+  container: {
+    borderWidth: 1,
+    borderColor: '#000',
+    borderStyle: 'solid',
+    marginBottom: 5,
+    height: 50,
+    padding: 10,
+    overflow: 'hidden',
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 17,
+  },
+  text: {},
+  removeBtn: {
+    position: 'absolute',
+    top: 7.5,
+    right: 5,
+    width: 30,
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  removeBtnText: {
+    fontSize: 30,
+    opacity: 0.6,
+  },
+});
 
 const modalContainerStyles = StyleSheet.create({});
 
