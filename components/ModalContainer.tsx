@@ -21,7 +21,7 @@ const AddElementModal = ({ handleAddTask, setter }: ModalProps) => {
   return (
     <View style={modalContainerStyles.addBtn}>
       <Pressable onPress={() => setModalOpened(!modalOpened)}>
-        <Text>Add note</Text>
+        <Text>Add a note</Text>
       </Pressable>
 
       <Modal

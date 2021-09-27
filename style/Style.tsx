@@ -12,8 +12,8 @@ const mainStyles = StyleSheet.create({
   resetBtn: {
     position: 'absolute',
     zIndex: 1,
-    top: '5%',
-    left: '2%',
+    top: '5.5%',
+    left: 20,
   },
 });
 
@@ -70,8 +70,8 @@ const modalContainerStyles = StyleSheet.create({
   addBtn: {
     position: 'absolute',
     zIndex: 1,
-    top: '5%',
-    right: '2%',
+    top: '5.5%',
+    right: 20,
   },
 });
 
@@ -85,20 +85,39 @@ const modalContentStyles = StyleSheet.create({
     position: 'relative',
   },
   input: {
-    width: '100%',
-    padding: 5,
+    width: 220,
+    padding: 10,
+    marginBottom: 20,
     borderBottomWidth: 1,
     borderBottomColor: '#000000',
     borderStyle: 'solid',
+    textAlign: 'center',
   },
   addBtn: {
     position: 'absolute',
     bottom: '10%',
     width: '30%',
     padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#000000',
+    borderWidth: 1,
+    borderColor: '#000000',
     borderStyle: 'solid',
+  },
+  addBtnText: {
+    textTransform: 'uppercase',
+    textAlign: 'center',
+  },
+  removeBtn: {
+    position: 'absolute',
+    top: 25,
+    right: 15,
+    width: 30,
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  removeBtnText: {
+    fontSize: 40,
+    opacity: 0.6,
   },
 });
 

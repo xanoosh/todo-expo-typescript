@@ -56,15 +56,19 @@ const ModalConent = ({
         </Pressable>
       </View>
       <Pressable
+        style={modalContentStyles.addBtn}
         onPress={() => {
           handleAddTask(getNewNote(), setter);
           setOpened(!opened);
         }}
       >
-        <Text>Add</Text>
+        <Text style={modalContentStyles.addBtnText}>Add</Text>
       </Pressable>
-      <Pressable onPress={() => setOpened(!opened)}>
-        <Text>×</Text>
+      <Pressable
+        style={modalContentStyles.removeBtn}
+        onPress={() => setOpened(!opened)}
+      >
+        <Text style={modalContentStyles.removeBtnText}>×</Text>
       </Pressable>
     </View>
   );

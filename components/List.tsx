@@ -37,7 +37,7 @@ const List = ({ array, handleRemoveTask, setter }: ListProps) => {
         />
       ))
     ) : (
-      <Text style={listStyles.placeholderText}>No tasks</Text>
+      <Text style={listStyles.placeholderText}>No notes added</Text>
     );
   return array.length > 0 ? (
     <ScrollView style={listStyles.container}>{content}</ScrollView>
