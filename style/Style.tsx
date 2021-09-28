@@ -42,11 +42,10 @@ const listElementStyles = StyleSheet.create({
     borderColor: '#000',
     borderStyle: 'solid',
     marginBottom: 5,
-    height: 50,
     padding: 10,
+    paddingRight: 40,
     overflow: 'hidden',
     flexDirection: 'row',
-    // justifyContent: '',
   },
   title: {
     fontWeight: 'bold',
@@ -82,17 +81,7 @@ const modalContainerStyles = StyleSheet.create({
     right: 20,
   },
 });
-
-const modalContentStyles = StyleSheet.create({
-  modalContainer: {
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    position: 'relative',
-  },
-  input: {},
+const modalFormStyles = StyleSheet.create({
   inputTitle: {
     width: 220,
     padding: 10,
@@ -112,13 +101,6 @@ const modalContentStyles = StyleSheet.create({
     borderRadius: 4,
     marginBottom: 20,
   },
-  inputText: {},
-  text: {
-    padding: 15,
-    textAlign: 'left',
-    lineHeight: 23,
-    fontSize: 18,
-  },
   addBtn: {
     position: 'absolute',
     bottom: '10%',
@@ -132,7 +114,7 @@ const modalContentStyles = StyleSheet.create({
     textTransform: 'uppercase',
     textAlign: 'center',
   },
-  removeBtn: {
+  closeBtn: {
     position: 'absolute',
     top: 25,
     right: 15,
@@ -141,9 +123,25 @@ const modalContentStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  removeBtnText: {
+  closeBtnText: {
     fontSize: 40,
     opacity: 0.6,
+  },
+});
+const modalContentStyles = StyleSheet.create({
+  modalContainer: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    position: 'relative',
+  },
+  text: {
+    padding: 15,
+    textAlign: 'left',
+    lineHeight: 23,
+    fontSize: 18,
   },
 });
 
@@ -153,4 +151,5 @@ export {
   listElementStyles,
   modalContainerStyles,
   modalContentStyles,
+  modalFormStyles,
 };

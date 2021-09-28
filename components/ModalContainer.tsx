@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { View, Text, Modal, Pressable } from 'react-native';
-import ModalContent from './ModalContent';
+import ModalForm from './ModalForm';
 import { modalContainerStyles } from '../style/Style';
 
 interface arrElement {
@@ -32,7 +32,7 @@ const AddElementModal = ({ handleAddTask, setter }: ModalProps) => {
           setModalOpened(!modalOpened);
         }}
       >
-        <ModalContent
+        <ModalForm
           setOpened={setModalOpened}
           opened={modalOpened}
           handleAddTask={handleAddTask}

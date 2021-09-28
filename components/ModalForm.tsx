@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { View, Text, Pressable, TextInput } from 'react-native';
-import { modalContentStyles } from '../style/Style';
+import { modalContentStyles, modalFormStyles } from '../style/Style';
 interface arrElement {
   title: string;
   text: string;
@@ -15,7 +15,7 @@ type ModalContentProps = {
   setter: (value: any) => void;
 };
 
-const ModalConent = ({
+const ModalForm = ({
   setOpened,
   opened,
   handleAddTask,
@@ -37,16 +37,14 @@ const ModalConent = ({
     <View style={modalContentStyles.modalContainer}>
       <View>
         <TextInput
-          style={modalContentStyles.inputTitle}
+          style={modalFormStyles.inputTitle}
           onChangeText={setTitle}
           value={title}
           placeholder="title"
         />
-        <View style={modalContentStyles.textInputContainer}>
+        <View style={modalFormStyles.textInputContainer}>
           <TextInput
             multiline={true}
-            // numberOfLines={7}
-            style={modalContentStyles.inputText}
             onChangeText={setText}
             value={text}
             placeholder="text"
@@ -58,22 +56,22 @@ const ModalConent = ({
         </Pressable>
       </View>
       <Pressable
-        style={modalContentStyles.addBtn}
+        style={modalFormStyles.addBtn}
         onPress={() => {
           handleAddTask(getNewNote(), setter);
           setOpened(!opened);
         }}
       >
-        <Text style={modalContentStyles.addBtnText}>Add</Text>
+        <Text style={modalFormStyles.addBtnText}>Add</Text>
       </Pressable>
       <Pressable
-        style={modalContentStyles.removeBtn}
+        style={modalFormStyles.closeBtn}
         onPress={() => setOpened(!opened)}
       >
-        <Text style={modalContentStyles.removeBtnText}>×</Text>
+        <Text style={modalFormStyles.closeBtnText}>×</Text>
       </Pressable>
     </View>
   );
 };
 
-export default ModalConent;
+export default ModalForm;
