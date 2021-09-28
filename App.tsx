@@ -14,7 +14,6 @@ export default function App() {
     title: string;
     text: string;
     isDone: boolean;
-    textExpanded: boolean;
   }
   const [toDo, setToDo] = useState<arrElement[]>([]);
 

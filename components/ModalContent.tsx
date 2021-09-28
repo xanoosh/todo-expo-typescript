@@ -6,7 +6,6 @@ interface arrElement {
   title: string;
   text: string;
   isDone: boolean;
-  textExpanded: boolean;
 }
 
 type ModalContentProps = {
@@ -25,14 +24,12 @@ const ModalConent = ({
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const [isDone, setIsDone] = useState(false);
-  const [textExpanded, setTextExpanded] = useState(false);
 
   const getNewNote = () => {
     return {
       title,
       text,
       isDone,
-      textExpanded,
     };
   };
 
@@ -40,13 +37,15 @@ const ModalConent = ({
     <View style={modalContentStyles.modalContainer}>
       <View>
         <TextInput
-          style={modalContentStyles.input}
+          style={modalContentStyles.inputTitle}
           onChangeText={setTitle}
           value={title}
           placeholder="title"
         />
         <TextInput
-          style={modalContentStyles.input}
+          multiline
+          numberOfLines={7}
+          style={modalContentStyles.inputText}
           onChangeText={setText}
           value={text}
           placeholder="text"

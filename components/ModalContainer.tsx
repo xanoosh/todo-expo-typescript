@@ -8,7 +8,6 @@ interface arrElement {
   title: string;
   text: string;
   isDone: boolean;
-  textExpanded: boolean;
 }
 
 type ModalProps = {
