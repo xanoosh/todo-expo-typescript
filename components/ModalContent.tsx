@@ -42,14 +42,17 @@ const ModalConent = ({
           value={title}
           placeholder="title"
         />
-        <TextInput
-          multiline
-          numberOfLines={7}
-          style={modalContentStyles.inputText}
-          onChangeText={setText}
-          value={text}
-          placeholder="text"
-        />
+        <View style={modalContentStyles.textInputContainer}>
+          <TextInput
+            multiline={true}
+            // numberOfLines={7}
+            style={modalContentStyles.inputText}
+            onChangeText={setText}
+            value={text}
+            placeholder="text"
+          />
+        </View>
+
         <Pressable onPress={() => setIsDone(!isDone)}>
           {/* <Text>{isDone ? 'yes' : 'no'}</Text> */}
         </Pressable>
