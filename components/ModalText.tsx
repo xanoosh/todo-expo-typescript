@@ -25,13 +25,15 @@ const ModalText = ({ text }: ModalProps) => {
         }}
       >
         <View style={modalContentStyles.modalContainer}>
-          <Pressable
-            style={modalContentStyles.removeBtn}
-            onPress={() => setModalOpened(!modalOpened)}
-          >
-            <Text style={modalContentStyles.removeBtnText}>×</Text>
-          </Pressable>
           <Text style={modalContentStyles.text}>{text}</Text>
+          <View style={modalContentStyles.closeBtnContainer}>
+            <Pressable
+              style={modalContentStyles.closeBtn}
+              onPress={() => setModalOpened(!modalOpened)}
+            >
+              <Text style={modalContentStyles.closeBtnText}>×</Text>
+            </Pressable>
+          </View>
         </View>
       </Modal>
     </View>

@@ -60,7 +60,7 @@ const listElementStyles = StyleSheet.create({
   },
   removeBtn: {
     position: 'absolute',
-    top: 7.5,
+    top: 5,
     right: 5,
     width: 30,
     height: 30,
@@ -86,10 +86,11 @@ const modalFormStyles = StyleSheet.create({
     width: 220,
     padding: 10,
     marginBottom: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: '#bbb',
+    borderWidth: 1,
+    borderColor: '#bbb',
     borderStyle: 'solid',
-    textAlign: 'center',
+    borderRadius: 4,
+    // textAlign: 'center',
   },
   textInputContainer: {
     width: 220,
@@ -124,7 +125,7 @@ const modalFormStyles = StyleSheet.create({
     alignItems: 'center',
   },
   closeBtnText: {
-    fontSize: 40,
+    fontSize: 30,
     opacity: 0.6,
   },
 });
@@ -142,6 +143,24 @@ const modalContentStyles = StyleSheet.create({
     textAlign: 'left',
     lineHeight: 23,
     fontSize: 18,
+  },
+  closeBtnContainer: {
+    position: 'absolute',
+    bottom: 25,
+    left: 0,
+    right: 0,
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  closeBtn: {
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  closeBtnText: {
+    fontSize: 50,
+    opacity: 0.6,
   },
 });
 
