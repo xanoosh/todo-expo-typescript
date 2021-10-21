@@ -36,12 +36,16 @@ const ModalForm = ({
     };
   };
 
-  const handleNoteCreation = () => {
-    if (haikuValidator(text)) {
+  const handlePoetryCreation = () => {
+    const poetry = haikuValidator(text);
+    if (poetry.isHaiku) {
       handleAddTask(getNewNote(), setter);
       setOpened(!opened);
     } else {
-      Alert.alert('Haiku error', 'Write in 5-7-5 syllable pattern');
+      Alert.alert(
+        'Haiku error',
+        `Write in 5-7-5 syllable pattern.\nCurrent pattern ${poetry.pattern}`
+      );
     }
   };
 
@@ -75,7 +79,7 @@ const ModalForm = ({
       </View>
       <Pressable
         style={modalFormStyles.addBtn}
-        onPress={() => handleNoteCreation()}
+        onPress={() => handlePoetryCreation()}
       >
         <Text style={modalFormStyles.addBtnText}>Add</Text>
       </Pressable>
