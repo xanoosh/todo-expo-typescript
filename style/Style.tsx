@@ -141,8 +141,8 @@ const modalContentStyles = StyleSheet.create({
   text: {
     padding: 15,
     textAlign: 'left',
-    lineHeight: 23,
-    fontSize: 18,
+    lineHeight: 38,
+    fontSize: 22,
   },
   closeBtnContainer: {
     position: 'absolute',

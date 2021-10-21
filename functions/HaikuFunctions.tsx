@@ -1,4 +1,4 @@
-//count syllables in a row:
+//word syllables:
 const countSyllables = (word: string) => {
   const lowerCased = word.toLowerCase();
   const baseSyllables = lowerCased.match(/[aąeęiouóy]/g) || [];
@@ -7,6 +7,7 @@ const countSyllables = (word: string) => {
   return result || 1;
 };
 
+//line syllables:
 const lineSyllables = (line: string) => {
   let sum = 0;
   line.split(' ').forEach((word) => {
@@ -18,7 +19,7 @@ const lineSyllables = (line: string) => {
 //check if str has 5-7-5 syllable pattern:
 const haikuValidator = (str: string) => {
   const [line1, line2, line3] = str.split('\n');
-  const one = line1.length ? lineSyllables(line1) : '?';
+  const one = line1 ? lineSyllables(line1) : '?';
   const two = line2 ? lineSyllables(line2) : '?';
   const three = line3 ? lineSyllables(line3) : '?';
 
