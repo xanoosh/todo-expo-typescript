@@ -1,17 +1,21 @@
-const countWordSyllables = (word: string) => {
-  const vowels = ['a', 'e', 'i', 'o', 'u', 'ó', 'ą', 'ę'];
+//count syllables in a row:
+const countSyllables = (word: string) => {
   const lowerCased = word.toLowerCase();
-  const baseSyllables = word.match(/[...vowels]/g)?.length;
-  const exeptions = word.match(/[ie,iu]/g)?.length;
-  const result =
-    baseSyllables && exeptions ? baseSyllables - exeptions : baseSyllables;
-  return result;
+  const baseSyllables = lowerCased.match(/[aąeęiouóy]/g) || [];
+  const exeptions = lowerCased.match(/[aąeęiouóy][aąeęiouóy]/g) || [];
+  return baseSyllables.length - exeptions.length;
 };
 
-const countLineSyllables = (line: string) => {};
-
+//check if str has 5-7-5 syllable pattern:
 const haikuValidator = (str: string) => {
   const [line1, line2, line3] = str.split('\n');
+  if (
+    countSyllables(line1) === 5 &&
+    countSyllables(line2) === 7 &&
+    countSyllables(line3) === 5
+  ) {
+    return true;
+  } else return false;
 };
 
 export { haikuValidator };
