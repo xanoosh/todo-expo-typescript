@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { View, Text, Pressable, TextInput } from 'react-native';
+import { View, Text, Pressable, TextInput, Alert } from 'react-native';
 import { modalContentStyles, modalFormStyles } from '../style/Style';
+import { haikuValidator } from '../functions/HaikuFunctions';
 interface arrElement {
   title: string;
   text: string;
@@ -33,6 +34,15 @@ const ModalForm = ({
     };
   };
 
+  const handleNoteCreation = () => {
+    if (haikuValidator(text)) {
+      handleAddTask(getNewNote(), setter);
+      setOpened(!opened);
+    } else {
+      Alert.alert('Haiku error', 'Write in 5-7-5 syllable pattern');
+    }
+  };
+
   return (
     <View style={modalContentStyles.modalContainer}>
       <View>
@@ -57,10 +67,7 @@ const ModalForm = ({
       </View>
       <Pressable
         style={modalFormStyles.addBtn}
-        onPress={() => {
-          handleAddTask(getNewNote(), setter);
-          setOpened(!opened);
-        }}
+        onPress={() => handleNoteCreation()}
       >
         <Text style={modalFormStyles.addBtnText}>Add</Text>
       </Pressable>
