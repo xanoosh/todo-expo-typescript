@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { View, Text, Pressable, TextInput, Alert } from 'react-native';
 import { modalContentStyles, modalFormStyles } from '../style/Style';
 import { haikuValidator } from '../functions/HaikuFunctions';
@@ -25,6 +25,8 @@ const ModalForm = ({
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const [isDone, setIsDone] = useState(false);
+
+  const haikuRef = React.createRef<TextInput>();
 
   const getNewNote = () => {
     return {
@@ -52,18 +54,24 @@ const ModalForm = ({
           value={title}
           placeholder="title"
         />
-        <View style={modalFormStyles.textInputContainer}>
+        <Pressable
+          style={modalFormStyles.textInputContainer}
+          onPress={() => {
+            haikuRef.current?.focus();
+          }}
+        >
           <TextInput
+            ref={haikuRef}
             multiline={true}
             onChangeText={setText}
             value={text}
             placeholder="text"
           />
-        </View>
-
-        <Pressable onPress={() => setIsDone(!isDone)}>
-          {/* <Text>{isDone ? 'yes' : 'no'}</Text> */}
         </Pressable>
+
+        {/* <Pressable onPress={() => setIsDone(!isDone)}>
+          <Text>{isDone ? 'yes' : 'no'}</Text>
+        </Pressable> */}
       </View>
       <Pressable
         style={modalFormStyles.addBtn}
